@@ -7,20 +7,20 @@ import { headerPlugin } from './headerMdPlugin'
 
 const nav = [
   {
-    text: 'Docs',
+    text: 'Dokümanlar',
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
     items: [
-      { text: 'Guide', link: '/guide/introduction' },
-      { text: 'Tutorial', link: '/tutorial/' },
-      { text: 'Examples', link: '/examples/' },
-      { text: 'Quick Start', link: '/guide/quick-start' },
+      { text: 'Kılavuz', link: '/guide/introduction' },
+      { text: 'Öğretici', link: '/tutorial/' },
+      { text: 'Örnekler', link: '/examples/' },
+      { text: 'Hızlı Başlangıç', link: '/guide/quick-start' },
       // { text: 'Style Guide', link: '/style-guide/' },
       {
-        text: 'Vue 2 Docs',
+        text: 'Vue 2 Dokümanları',
         link: 'https://v2.vuejs.org'
       },
       {
-        text: 'Migration from Vue 2',
+        text: "Vue 2'den Göç",
         link: 'https://v3-migration.vuejs.org/'
       }
     ]
@@ -31,31 +31,31 @@ const nav = [
     link: '/api/'
   },
   {
-    text: 'Playground',
+    text: 'Oyun Alanı',
     link: 'https://sfc.vuejs.org'
   },
   {
-    text: 'Ecosystem',
+    text: 'Ekosistem',
     activeMatch: `^/ecosystem/`,
     items: [
       {
-        text: 'Resources',
+        text: 'Kaynaklar',
         items: [
-          { text: 'Partners', link: '/partners/' },
-          { text: 'Themes', link: '/ecosystem/themes' },
-          { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' },
-          { text: 'T-Shirt Shop', link: 'https://vue.threadless.com/' }
+          { text: 'Ortaklar', link: '/partners/' },
+          { text: 'Temalar', link: '/ecosystem/themes' },
+          { text: 'İşler', link: 'https://vuejobs.com/?ref=vuejs' },
+          { text: 'Tişört Mağazası', link: 'https://vue.threadless.com/' }
         ]
       },
       {
-        text: 'Core Libraries',
+        text: 'Çekirdek Kitaplıklar',
         items: [
           { text: 'Vue Router', link: 'https://router.vuejs.org/' },
           { text: 'Pinia', link: 'https://pinia.vuejs.org/' }
         ]
       },
       {
-        text: 'Video Courses',
+        text: 'Video Kurslar',
         items: [
           {
             text: 'Vue Mastery',
@@ -68,10 +68,10 @@ const nav = [
         ]
       },
       {
-        text: 'Help',
+        text: 'Yardım',
         items: [
           {
-            text: 'Discord Chat',
+            text: 'Discord',
             link: 'https://discord.com/invite/HBherRA'
           },
           {
@@ -82,30 +82,30 @@ const nav = [
         ]
       },
       {
-        text: 'News',
+        text: 'Haberler',
         items: [
           { text: 'Blog', link: 'https://blog.vuejs.org/' },
           { text: 'Twitter', link: 'https://twitter.com/vuejs' },
-          { text: 'Newsletter', link: 'https://news.vuejs.org/' },
-          { text: 'Events', link: 'https://events.vuejs.org/' }
+          { text: 'Bülten', link: 'https://news.vuejs.org/' },
+          { text: 'Etkinlikler', link: 'https://events.vuejs.org/' }
         ]
       }
     ]
   },
   {
-    text: 'About',
+    text: 'Hakkında',
     activeMatch: `^/about/`,
     items: [
-      { text: 'FAQ', link: '/about/faq' },
-      { text: 'Team', link: '/about/team' },
-      { text: 'Releases', link: '/about/releases' },
+      { text: 'SSS', link: '/about/faq' },
+      { text: 'Ekip', link: '/about/team' },
+      { text: 'Yayınlar', link: '/about/releases' },
       {
-        text: 'Community Guide',
+        text: 'Topluluk Kılavuzu',
         link: '/about/community-guide'
       },
-      { text: 'Code of Conduct', link: '/about/coc' },
+      { text: 'Davranış Kodu', link: '/about/coc' },
       {
-        text: 'The Documentary',
+        text: 'Belgesel',
         link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
       }
     ]
@@ -115,7 +115,7 @@ const nav = [
     link: '/sponsor/'
   },
   {
-    text: 'Partners',
+    text: 'Ortaklar',
     link: '/partners/',
     activeMatch: `^/partners/`
   }
@@ -124,100 +124,106 @@ const nav = [
 export const sidebar = {
   '/guide/': [
     {
-      text: 'Getting Started',
+      text: 'Başlarken',
       items: [
-        { text: 'Introduction', link: '/guide/introduction' },
+        { text: 'Giriş', link: '/guide/introduction' },
         {
-          text: 'Quick Start',
+          text: 'Hızlı Başlangıç',
           link: '/guide/quick-start'
         }
       ]
     },
     {
-      text: 'Essentials',
+      text: 'Temeller',
       items: [
         {
-          text: 'Creating an Application',
+          text: 'Bir Uygulama Oluşturun',
           link: '/guide/essentials/application'
         },
         {
-          text: 'Template Syntax',
+          text: 'Template Sözdizimi',
           link: '/guide/essentials/template-syntax'
         },
         {
-          text: 'Reactivity Fundamentals',
+          text: 'Reaktivite Temelleri',
           link: '/guide/essentials/reactivity-fundamentals'
         },
         {
-          text: 'Computed Properties',
+          text: 'Computed Özellikleri',
           link: '/guide/essentials/computed'
         },
         {
-          text: 'Class and Style Bindings',
+          text: 'Class ve Style Bağlamaları',
           link: '/guide/essentials/class-and-style'
         },
         {
-          text: 'Conditional Rendering',
+          text: 'Koşullu Yazdırma',
           link: '/guide/essentials/conditional'
         },
-        { text: 'List Rendering', link: '/guide/essentials/list' },
+        { text: 'Liste Yazdırma', link: '/guide/essentials/list' },
         {
-          text: 'Event Handling',
+          text: 'Olay İşleme',
           link: '/guide/essentials/event-handling'
         },
-        { text: 'Form Input Bindings', link: '/guide/essentials/forms' },
         {
-          text: 'Lifecycle Hooks',
+          text: 'Form Giriş Bağlantıları',
+          link: '/guide/essentials/forms'
+        },
+        {
+          text: 'Yaşam Döngüsü Kancaları',
           link: '/guide/essentials/lifecycle'
         },
-        { text: 'Watchers', link: '/guide/essentials/watchers' },
-        { text: 'Template Refs', link: '/guide/essentials/template-refs' },
+        { text: 'Gözlemciler', link: '/guide/essentials/watchers' },
         {
-          text: 'Components Basics',
+          text: 'Template Referansları',
+          link: '/guide/essentials/template-refs'
+        },
+        {
+          text: 'Bileşen Temelleri',
           link: '/guide/essentials/component-basics'
         }
       ]
     },
     {
-      text: 'Components In-Depth',
+      text: 'Derinlemesine Bileşenler',
       items: [
         {
-          text: 'Registration',
+          text: 'Kayıt',
           link: '/guide/components/registration'
         },
-        { text: 'Props', link: '/guide/components/props' },
-        { text: 'Events', link: '/guide/components/events' },
+        { text: "Prop'lar", link: '/guide/components/props' },
+        { text: 'Olaylar', link: '/guide/components/events' },
         {
-          text: 'Fallthrough Attributes',
+          text: 'Sıfat Geçişi',
           link: '/guide/components/attrs'
         },
-        { text: 'Slots', link: '/guide/components/slots' },
+        { text: "Slot'lar", link: '/guide/components/slots' },
         {
           text: 'Provide / inject',
           link: '/guide/components/provide-inject'
         },
         {
-          text: 'Async Components',
+          text: "Asenkron Component'ler",
           link: '/guide/components/async'
         }
       ]
     },
     {
-      text: 'Reusability',
+      text: 'Tekrar Kullanılabilirlik',
       items: [
         {
-          text: 'Composables',
+          text: 'Birleştirilebilirler',
           link: '/guide/reusability/composables'
         },
         {
-          text: 'Custom Directives',
+          text: 'Özel Direktifler',
           link: '/guide/reusability/custom-directives'
         },
-        { text: 'Plugins', link: '/guide/reusability/plugins' }
+        { text: 'Eklentiler', link: '/guide/reusability/plugins' }
       ]
     },
     {
-      text: 'Built-in Components',
+      text: 'Dahili Bileşenler',
       items: [
         { text: 'Transition', link: '/guide/built-ins/transition' },
         {
@@ -230,39 +236,39 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Scaling Up',
+      text: 'Ölçeklendirme',
       items: [
-        { text: 'Single-File Components', link: '/guide/scaling-up/sfc' },
-        { text: 'Tooling', link: '/guide/scaling-up/tooling' },
-        { text: 'Routing', link: '/guide/scaling-up/routing' },
+        { text: 'Tek-Dosya Bileşenleri', link: '/guide/scaling-up/sfc' },
+        { text: 'Alet Takımı', link: '/guide/scaling-up/tooling' },
+        { text: 'Yönlendirme', link: '/guide/scaling-up/routing' },
         {
-          text: 'State Management',
+          text: 'Durum Yönetimi',
           link: '/guide/scaling-up/state-management'
         },
-        { text: 'Testing', link: '/guide/scaling-up/testing' },
+        { text: 'Test', link: '/guide/scaling-up/testing' },
         {
-          text: 'Server-Side Rendering (SSR)',
+          text: 'Sunucu-Tarafı Oluşturma (SSR)',
           link: '/guide/scaling-up/ssr'
         }
       ]
     },
     {
-      text: 'Best Practices',
+      text: 'En İyi Uygulamalar',
       items: [
         {
-          text: 'Production Deployment',
+          text: 'Üretim Dağıtımı',
           link: '/guide/best-practices/production-deployment'
         },
         {
-          text: 'Performance',
+          text: 'Performans',
           link: '/guide/best-practices/performance'
         },
         {
-          text: 'Accessibility',
+          text: 'Ulaşılabilirlik',
           link: '/guide/best-practices/accessibility'
         },
         {
-          text: 'Security',
+          text: 'Güvenlik',
           link: '/guide/best-practices/security'
         }
       ]
@@ -270,50 +276,50 @@ export const sidebar = {
     {
       text: 'TypeScript',
       items: [
-        { text: 'Overview', link: '/guide/typescript/overview' },
+        { text: 'Genel Bakış', link: '/guide/typescript/overview' },
         {
-          text: 'TS with Composition API',
+          text: 'Composition API ile TS',
           link: '/guide/typescript/composition-api'
         },
         {
-          text: 'TS with Options API',
+          text: 'Options API ile TS',
           link: '/guide/typescript/options-api'
         }
       ]
     },
     {
-      text: 'Extra Topics',
+      text: 'Diğer Konular',
       items: [
         {
-          text: 'Ways of Using Vue',
+          text: "Vue'yu Kullanma Yolları",
           link: '/guide/extras/ways-of-using-vue'
         },
         {
-          text: 'Composition API FAQ',
+          text: 'Composition API SSS',
           link: '/guide/extras/composition-api-faq'
         },
         {
-          text: 'Reactivity in Depth',
+          text: 'Derinlikteki Reaktivite',
           link: '/guide/extras/reactivity-in-depth'
         },
         {
-          text: 'Rendering Mechanism',
+          text: 'Oluşturma Mekanizması',
           link: '/guide/extras/rendering-mechanism'
         },
         {
-          text: 'Render Functions & JSX',
+          text: 'Oluşturma Fonksiyonları & JSX',
           link: '/guide/extras/render-function'
         },
         {
-          text: 'Vue and Web Components',
+          text: 'Vue ve Web Bileşenleri',
           link: '/guide/extras/web-components'
         },
         {
-          text: 'Animation Techniques',
+          text: 'Animasyonlar Teknikleri',
           link: '/guide/extras/animation'
         },
         {
-          text: 'Reactivity Transform',
+          text: 'Reaktivite Dönüşümü',
           link: '/guide/extras/reactivity-transform'
         }
         // {
@@ -330,11 +336,11 @@ export const sidebar = {
   ],
   '/api/': [
     {
-      text: 'Global API',
+      text: 'Genel API',
       items: [
-        { text: 'Application', link: '/api/application' },
+        { text: 'Uygulama', link: '/api/application' },
         {
-          text: 'General',
+          text: 'Genel',
           link: '/api/general'
         }
       ]
@@ -344,23 +350,23 @@ export const sidebar = {
       items: [
         { text: 'setup()', link: '/api/composition-api-setup' },
         {
-          text: 'Reactivity: Core',
+          text: 'Reaktivite: Öz',
           link: '/api/reactivity-core'
         },
         {
-          text: 'Reactivity: Utilities',
+          text: 'Reaktivite: Araçlar',
           link: '/api/reactivity-utilities'
         },
         {
-          text: 'Reactivity: Advanced',
+          text: 'Reaktivite: Gelişmiş',
           link: '/api/reactivity-advanced'
         },
         {
-          text: 'Lifecycle Hooks',
+          text: 'Yaşam Döngüsü Kancaları',
           link: '/api/composition-api-lifecycle'
         },
         {
-          text: 'Dependency Injection',
+          text: 'Bağımlılık Enjeksiyonu',
           link: '/api/composition-api-dependency-injection'
         }
       ]
@@ -368,115 +374,118 @@ export const sidebar = {
     {
       text: 'Options API',
       items: [
-        { text: 'Options: State', link: '/api/options-state' },
-        { text: 'Options: Rendering', link: '/api/options-rendering' },
+        { text: 'Options: Durum', link: '/api/options-state' },
+        { text: 'Options: Yazdırma', link: '/api/options-rendering' },
         {
-          text: 'Options: Lifecycle',
+          text: 'Options: Yaşam Döngüsü',
           link: '/api/options-lifecycle'
         },
         {
           text: 'Options: Composition',
           link: '/api/options-composition'
         },
-        { text: 'Options: Misc', link: '/api/options-misc' },
+        { text: 'Options: Çeşitli', link: '/api/options-misc' },
         {
-          text: 'Component Instance',
+          text: 'Bileşen Örneği',
           link: '/api/component-instance'
         }
       ]
     },
     {
-      text: 'Built-ins',
+      text: 'Yerleşikler',
       items: [
-        { text: 'Directives', link: '/api/built-in-directives' },
-        { text: 'Components', link: '/api/built-in-components' },
+        { text: 'Direktifler', link: '/api/built-in-directives' },
+        { text: 'Bileşenler', link: '/api/built-in-components' },
         {
-          text: 'Special Elements',
+          text: 'Özel Elemanlar',
           link: '/api/built-in-special-elements'
         },
         {
-          text: 'Special Attributes',
+          text: 'Özel Sıfatlar',
           link: '/api/built-in-special-attributes'
         }
       ]
     },
     {
-      text: 'Single-File Component',
+      text: 'Tek-Dosya Bileşenleri',
       items: [
-        { text: 'Syntax Specification', link: '/api/sfc-spec' },
+        { text: 'Sözdizimi Belirtimi', link: '/api/sfc-spec' },
         { text: '<script setup>', link: '/api/sfc-script-setup' },
-        { text: 'CSS Features', link: '/api/sfc-css-features' }
+        { text: 'CSS Özellikleri', link: '/api/sfc-css-features' }
       ]
     },
     {
-      text: 'Advanced APIs',
+      text: "Gelişmiş API'ler",
       items: [
-        { text: 'Render Function', link: '/api/render-function' },
-        { text: 'Server-Side Rendering', link: '/api/ssr' },
-        { text: 'TypeScript Utility Types', link: '/api/utility-types' },
-        { text: 'Custom Renderer', link: '/api/custom-renderer' }
+        { text: 'Render Fonksiyonu', link: '/api/render-function' },
+        { text: 'Suncu-Tarafı Oluşturma', link: '/api/ssr' },
+        {
+          text: 'TypeScript Yardımcı Türleri',
+          link: '/api/utility-types'
+        },
+        { text: 'Özel Oluşturucu', link: '/api/custom-renderer' }
       ]
     }
   ],
   '/examples/': [
     {
-      text: 'Basic',
+      text: 'Temel',
       items: [
         {
-          text: 'Hello World',
+          text: 'Merhaba Dünya',
           link: '/examples/#hello-world'
         },
         {
-          text: 'Handling User Input',
+          text: 'Kullanıcı Girişini İşleme',
           link: '/examples/#handling-input'
         },
         {
-          text: 'Attribute Bindings',
+          text: 'Sıfat Bağlamaları',
           link: '/examples/#attribute-bindings'
         },
         {
-          text: 'Conditionals and Loops',
+          text: 'Koşullar ve Döngüler',
           link: '/examples/#conditionals-and-loops'
         },
         {
-          text: 'Form Bindings',
+          text: 'Form Bağlamaları',
           link: '/examples/#form-bindings'
         },
         {
-          text: 'Simple Component',
+          text: 'Örnek Bileşen',
           link: '/examples/#simple-component'
         }
       ]
     },
     {
-      text: 'Practical',
+      text: 'Pratik',
       items: [
         {
-          text: 'Markdown Editor',
+          text: 'Markdown Editörü',
           link: '/examples/#markdown'
         },
         {
-          text: 'Fetching Data',
+          text: 'Veri İşleme',
           link: '/examples/#fetching-data'
         },
         {
-          text: 'Grid with Sort and Filter',
+          text: 'Sıralamalı ve Filtreli Grid',
           link: '/examples/#grid'
         },
         {
-          text: 'Tree View',
+          text: 'Ağaç Görünümü',
           link: '/examples/#tree'
         },
         {
-          text: 'SVG Graph',
+          text: 'SVG Grafiği',
           link: '/examples/#svg'
         },
         {
-          text: 'Modal with Transitions',
+          text: 'Geçişli Modal',
           link: '/examples/#modal'
         },
         {
-          text: 'List with Transitions',
+          text: 'Geçişli Liste',
           link: '/examples/#list-transition'
         },
         {
@@ -487,22 +496,22 @@ export const sidebar = {
     },
     {
       // https://eugenkiss.github.io/7guis/
-      text: '7 GUIs',
+      text: "7 GUI'ler",
       items: [
         {
-          text: 'Counter',
+          text: 'Sayaç',
           link: '/examples/#counter'
         },
         {
-          text: 'Temperature Converter',
+          text: 'Sıcaklık Dönüştürücü',
           link: '/examples/#temperature-converter'
         },
         {
-          text: 'Flight Booker',
+          text: 'Uçuş Rezervasyonu',
           link: '/examples/#flight-booker'
         },
         {
-          text: 'Timer',
+          text: 'Zamanlayıcı',
           link: '/examples/#timer'
         },
         {
@@ -510,11 +519,11 @@ export const sidebar = {
           link: '/examples/#crud'
         },
         {
-          text: 'Circle Drawer',
+          text: 'Daire Çizici',
           link: '/examples/#circle-drawer'
         },
         {
-          text: 'Cells',
+          text: 'Hücreler',
           link: '/examples/#cells'
         }
       ]
@@ -522,26 +531,26 @@ export const sidebar = {
   ],
   '/style-guide/': [
     {
-      text: 'Style Guide',
+      text: 'Stil Rehberi',
       items: [
         {
-          text: 'Overview',
+          text: 'Genel Bakış',
           link: '/style-guide/'
         },
         {
-          text: 'A - Essential',
+          text: 'A - Temel',
           link: '/style-guide/rules-essential'
         },
         {
-          text: 'B - Strongly Recommended',
+          text: 'B - Kesinlikle Önerilen',
           link: '/style-guide/rules-strongly-recommended'
         },
         {
-          text: 'C - Recommended',
+          text: 'C - Önerilen',
           link: '/style-guide/rules-recommended'
         },
         {
-          text: 'D - Use with Caution',
+          text: 'D - Dikkate Kullanın',
           link: '/style-guide/rules-use-with-caution'
         }
       ]
@@ -552,9 +561,9 @@ export const sidebar = {
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
-  lang: 'en-US',
+  lang: 'tr-TR',
   title: 'Vue.js',
-  description: 'Vue.js - The Progressive JavaScript Framework',
+  description: 'Vue.js - Aşamalı JavaScript Çerçevesi',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
   scrollOffset: 'header',
@@ -622,15 +631,15 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     editLink: {
       repo: 'vuejs/docs',
-      text: 'Edit this page on GitHub'
+      text: "Bu sayfayı GitHub'da düzenle"
     },
 
     footer: {
       license: {
-        text: 'MIT License',
+        text: 'MIT Lisansı',
         link: 'https://opensource.org/licenses/MIT'
       },
-      copyright: `Copyright © 2014-${new Date().getFullYear()} Evan You`
+      copyright: `Tüm Hakları Saklıdır © 2014-${new Date().getFullYear()} Evan You`
     }
   },
 
