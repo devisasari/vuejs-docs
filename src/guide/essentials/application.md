@@ -1,32 +1,31 @@
-# Creating a Vue Application
+# Bir Vue uygulaması oluşturma
 
-## The application instance
+## Uygulama başlangıcı
 
-Every Vue application starts by creating a new **application instance** with the [`createApp`](/api/application#createapp) function:
+Bir Vue uygulaması oluşturabilmek için gereken ilk adım, [`createApp`](/api/application#createapp) fonksiyonunu kullanarak bir uygulama nesnesi oluşturmaktır.
 
 ```js
 import { createApp } from 'vue'
 
 const app = createApp({
-  /* root component options */
+  /* Kök bileşen ayarları */
 })
 ```
 
-## The Root Component
+## Ana bileşen
 
-The object we are passing into `createApp` is in fact a component. Every app requires a "root component" that can contain other components as its children.
+Temelde, [`createApp`](/api/application#createapp) fonksiyonuna verilen obje bir "ana bileşen"dir. Her bir Vue uygulaması, mutlaka diğer bileşenleri sarmalayacak bir "ana bileşen"e ihtiyaç duyar. 
 
-If you are using Single-File Components, we typically import the root component from another file:
-
+Eğer Tek-Sayfa Bileşenleri kullanıyorsanız, ana bileşeni çoğu zaman şu şekilde çağırırsınız: 
 ```js
 import { createApp } from 'vue'
-// import the root component App from a single-file component.
+// Ana bileşen olan App bileşenini, yazıldığı dosyadan çağırın.
 import App from './App.vue'
 
 const app = createApp(App)
 ```
 
-While many examples in this guide only need a single component, most real applications are organized into a tree of nested, reusable components. For example, a Todo application's component tree might look like this:
+Her ne kadar bu rehberdeki birçok örnek tek bir bileşen kullansa da, çoğu Vue uygulaması kendi içinde tekrar tekrar kullanılabilecek birçok bileşeni içeren bir bileşen yapısı içerir. Örneğin, bir yapılacaklar listesi uygulaması yapmak isteseydik, bileşenlerimiz şu şekilde olabilirdi: 
 
 ```
 App (root component)
@@ -39,11 +38,10 @@ App (root component)
    └─ TodoStatistics
 ```
 
-We will discuss how to define and compose multiple components together in later sections of the guide. Before that, we will focus on what happens inside a single component.
+Birden fazla bileşeni bir arada nasıl tanımlayıp kullanacağınızı sonraki bölümlerde göreceğiz. Bundan önce, şimdilik bir bileşenin içinde neler oluyor ona odaklanalım.
 
-## Mounting the App
-
-An application instance won't render anything until its `.mount()` method is called. It expects a "container" argument, which can either be an actual DOM element or a selector string:
+## Uygulamayı elemana bağlamak
+Bir Vue uygulaması, herhangi bir DOM elamanına bağlanmadan (`.mount()` edilmeden önce) herhangi bir şey render etmez. Dolayısıyla uygulamamızı çalışır hale getirebilmek için gereken son adım, oluşturduğumuz uygulamayı bir DOM elemanına bağlamaktır. `mount` fonksiyonuna parametre olarak ister bir DOM elemanı, istersek de bir seçici verebiliriz.
 
 ```html
 <div id="app"></div>
@@ -53,14 +51,13 @@ An application instance won't render anything until its `.mount()` method is cal
 app.mount('#app')
 ```
 
-The content of the app's root component will be rendered inside the container element. The container element itself is not considered part of the app.
+Oluşturduğumuz uygulamanın içeriği, verilen elamanın içerisine `render` olacaktır. Burada verdiğimiz elamanın kendisi, uygulamanın bir parçası olarak kabul edilmez.
 
-The `.mount()` method should always be called after all app configurations and asset registrations are done. Also note that its return value, unlike the asset registration methods, is the root component instance instead of the application instance.
+`.mount()` fonksiyonu, mutlaka tüm uygulama ayarlamaları ve assetler kaydolduktan sonra çağırılmalıdır. Ayrıca, diğer methodlardan farklı olarak; `mount` fonksiyonu uygulama nesnesi yerine ana bileşeni döndürür.
 
-### In-DOM Root Component Template
+### DOM içi ana bileşen yapısı
 
-When using Vue without a build step, we can write our root component's template directly inside the mount container:
-
+Herhangi bir dönüştürücü adımı kullanmadan Vue'yü kullanırken, ana bileşeni doğrudan `mount` sarmalayıcısı içerisine koyabiliriz.
 ```html
 <div id="app">
   <button @click="count++">{{ count }}</button>
@@ -81,31 +78,33 @@ const app = createApp({
 app.mount('#app')
 ```
 
-Vue will automatically use the container's `innerHTML` as the template if the root component does not already have a `template` option.
+Eğer ana bileşen kendi `template` ayarlasına sahip değilse; Vue otomatik olarak, sarmalayıcının `innerHTML` değerini, ana bileşen olarak algılar.
 
-## App Configurations
+## Uygulama ayarları
 
-The application instance exposes a `.config` object that allows us to configure a few app-level options, for example defining an app-level error handler that captures errors from all descendent components:
+Uygulama ayarları, uygulama nesnesinin içerisinden ulaşılabilecek `.config` objesinden yapılabilir. Örnek olarak uygulama seviyesinde tüm hataları yakalayabilecek bir hata işleyicisi verilebilir:
 
 ```js
 app.config.errorHandler = (err) => {
-  /* handle error */
+  /* hatayı işleyin */
 }
 ```
 
 The application instance also provides a few methods for registering app-scoped assets. For example, registering a component:
 
+Uygulama nesnesi ayrıca birkaç app'e özgü asset kayıt fonksiyonu da sağlar. Örneğin, bir bileşen şöyle kayıt edilebilir:
+
 ```js
 app.component('TodoDeleteButton', TodoDeleteButton)
 ```
 
-This makes the `TodoDeleteButton` available for use anywhere in our app. We will discuss registration for components and other types of assets in later sections of the guide. You can also browse the full list of application instance APIs in its [API reference](/api/application).
+Bu şekilde `TodoDeleteButton` bileşenini, uygulamamızın herhangi bir bölümünden erişilebilir hale getirebiliriz. Bileşen ve diğer asset tiplerinin kayıtlarını, rehberin ilerleyen bölümlerinde göreceğiz. Diğer tüm uygulama nesnesi API'larına [API reference](/api/application)
+This makes the `TodoDeleteButton` available for use anywhere in our app. We will discuss registration for components and other types of assets in later sections of the guide. You can also browse the full list of application instance APIs in its [API referansı](/api/application)'ndan ulaşabilirsiniz..
 
-Make sure to apply all app configurations before mounting the app!
+Tüm ayarlamaları, uygulamayı `mount` etmeden önce yapmayı unutmayın!
 
-## Multiple application instances
-
-You are not limited to a single application instance on the same page. The `createApp` API allows multiple Vue applications to co-exist on the same page, each with its own scope for configuration and global assets:
+## Birden fazla uygulama oluşturmak
+Bir sayfa üzerinde yalnızca bir uygulama ile sınırlanmış değilsiniz. `createApp` API'yı, birden fazla uygulamanın tek bir sayfa üzerinde birbirinden tamamen bağımsız çalışmasını sağlayabilir. 
 
 ```js
 const app1 = createApp({
@@ -119,4 +118,4 @@ const app2 = createApp({
 app2.mount('#container-2')
 ```
 
-If you are using Vue to enhance server-rendered HTML and only need Vue to control specific parts of a large page, avoid mounting a single Vue application instance on the entire page. Instead, create multiple small application instances and mount them on the elements they are responsible for.
+Eğer Vue'yu sunucu tarafından render edilmiş bir HTML'i iyileştirmek ve büyük bir sayfanın sadece belirli parçalarını kontrol etmek istiyorsanız, tüm sayfa için bir Vue uygulaması oluşturmaktan kaçınmalısınız. Bunun yerine, birden fazla küçük uygulama oluşturup ihtiyaç duyulan kısımlara `mount` edebilirsiniz.
