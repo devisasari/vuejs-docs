@@ -13,7 +13,7 @@ onMounted(async () => {
 <template>
   <section id="hero">
     <h1 class="tagline">
-      <span class="accent">İlerici</span>
+      <span class="accent">Aşamalı</span>
       <br />JavaScript Çerçevesi
     </h1>
     <p class="description">

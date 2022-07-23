@@ -563,7 +563,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   lang: 'tr-TR',
   title: 'Vue.js',
-  description: 'Vue.js - İlerici JavaScript Çerçevesi',
+  description: 'Vue.js - Aşamalı JavaScript Çerçevesi',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
   scrollOffset: 'header',

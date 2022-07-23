@@ -8,3 +8,5 @@ The following pages are complete:
 - Sidebar
 - Footer
 - Site Metadata
+- Banners
+- introduction.md
