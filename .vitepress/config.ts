@@ -563,7 +563,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   lang: 'tr-TR',
   title: 'Vue.js',
-  description: 'Vue.js - Aşamalı JavaScript Çerçevesi',
+  description: 'Vue.js - İlerici JavaScript Çerçevesi',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
   scrollOffset: 'header',
@@ -612,6 +612,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       indexName: 'vuejs',
       appId: 'ML0LEBN7FQ',
       apiKey: 'f49cbd92a74532cc55cfbffa5e5a7d01',
+      placeholder: 'Ara',
       searchParameters: {
         facetFilters: ['version:v3']
       }

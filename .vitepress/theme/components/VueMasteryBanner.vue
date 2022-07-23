@@ -1,20 +1,36 @@
 <template>
-<div id="vm-banner" class="vuemastery-banner" role="banner" v-if="isVisible">
-  <a
-    id="vs"
-    href="https://www.vuemastery.com/free-weekend"
-    target="_blank"
-    rel="noreferrer"
+  <div
+    id="vm-banner"
+    class="vuemastery-banner"
     role="banner"
+    v-if="isVisible"
   >
-    <div class="vuemastery-banner--wrapper">
-      <img class="vuemastery-banner--logo" src="/images/vuemastery/logo-vuemastery.svg" alt="vuemastery" />
-      <p>Access the highest quality library of Vue courses free<span>July 22-24 only</span></p>
-        <button class="vuemastery-button">Secure a spot</button>
-    </div>
-    <div id="vm-close" class="vuemastery-banner--close" @click.stop.prevent="close"></div>
-  </a>
-</div>
+    <a
+      id="vs"
+      href="https://www.vuemastery.com/free-weekend"
+      target="_blank"
+      rel="noreferrer"
+      role="banner"
+    >
+      <div class="vuemastery-banner--wrapper">
+        <img
+          class="vuemastery-banner--logo"
+          src="/images/vuemastery/logo-vuemastery.svg"
+          alt="vuemastery"
+        />
+        <p>
+          En yüksek kalitede Vue kursları kütüphanesine ücretsiz
+          erişin<span>sadece 22-24 Temmuz</span>
+        </p>
+        <button class="vuemastery-button">Bir Yer Ayırtın</button>
+      </div>
+      <div
+        id="vm-close"
+        class="vuemastery-banner--close"
+        @click.stop.prevent="close"
+      ></div>
+    </a>
+  </div>
 </template>
 
 <script setup>
@@ -25,11 +41,11 @@ const isVisible = ref(false)
 onMounted(() => {
   const now = new Date()
   const end = new Date('2022-07-25T00:00:00+02:00')
-  isVisible.value = !localStorage.getItem('VM_FW_22_OFFER') && (now < end)
+  isVisible.value = !localStorage.getItem('VM_FW_22_OFFER') && now < end
   if (isVisible.value) document.body.classList.add('has-top-banner')
 })
 
-function close () {
+function close() {
   isVisible.value = false
   document.body.classList.remove('has-top-banner')
   localStorage.setItem('VM_FW_22_OFFER', 1)
@@ -38,7 +54,8 @@ function close () {
 
 <style>
 .vuemastery-banner {
-  background: url("../images/vuemastery/background-vuemastery.svg") center center no-repeat;
+  background: url('../images/vuemastery/background-vuemastery.svg') center
+    center no-repeat;
   background-size: 100% auto;
   overflow: hidden;
   position: fixed;
@@ -49,7 +66,8 @@ function close () {
 }
 .vuemastery-banner:before {
   content: '';
-  background: url("../images/vuemastery/background-bubbles-vuemastery.svg") left center no-repeat;
+  background: url('../images/vuemastery/background-bubbles-vuemastery.svg')
+    left center no-repeat;
   background-size: cover;
   position: absolute;
   top: 0;
@@ -61,7 +79,8 @@ function close () {
 }
 .vuemastery-banner:after {
   content: '';
-  background: url("../images/vuemastery/lock-vuemastery.svg") right center no-repeat;
+  background: url('../images/vuemastery/lock-vuemastery.svg') right center
+    no-repeat;
   background-size: auto 100%;
   position: absolute;
   width: 100%;
@@ -77,7 +96,7 @@ function close () {
   transform: scale(1);
 }
 .vuemastery-banner:hover:after {
-  background-image: url("../images/vuemastery/unlock-vuemastery.svg");
+  background-image: url('../images/vuemastery/unlock-vuemastery.svg');
 }
 .vuemastery-banner a {
   display: flex;
@@ -178,7 +197,7 @@ function close () {
 .vuemastery-button:before,
 .vuemastery-button:after {
   background: linear-gradient(to top right, transparent, #fff);
-  content: "";
+  content: '';
   height: 150px;
   left: -175px;
   opacity: 0.1;
@@ -203,11 +222,14 @@ function close () {
   position: fixed;
 }
 @media screen and (min-width: 901px) {
-  .vuemastery-weekend-promo.docs:not(.vuemastery-menu-fixed) #main.fix-sidebar .sidebar {
+  .vuemastery-weekend-promo.docs:not(.vuemastery-menu-fixed)
+    #main.fix-sidebar
+    .sidebar {
     position: absolute;
     top: 141px;
   }
-  .vuemastery-weekend-promo.docs:not(.vuemastery-menu-fixed) #sidebar-sponsors-platinum-right {
+  .vuemastery-weekend-promo.docs:not(.vuemastery-menu-fixed)
+    #sidebar-sponsors-platinum-right {
     position: absolute;
     top: 170px;
   }
@@ -274,7 +296,6 @@ function close () {
   }
 }
 @media screen and (max-width: 465px) {
-
   .vuemastery-banner p {
     max-width: 185px;
   }
@@ -294,7 +315,6 @@ function close () {
     display: none;
   }
 }
-
 
 .has-top-banner {
   --vt-banner-height: 80px;

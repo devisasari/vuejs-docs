@@ -68,12 +68,12 @@ function slugify(text: string): string {
 <template>
   <div id="api-index">
     <div class="header">
-      <h1>API Reference</h1>
+      <h1>API Referansı</h1>
       <div class="api-filter">
-        <label for="api-filter">Filter</label>
+        <label for="api-filter">Filtrele</label>
         <input
           type="search"
-          placeholder="Enter keyword"
+          placeholder="Anahtar Kelime Gir"
           id="api-filter"
           v-model="query"
         />
@@ -95,7 +95,9 @@ function slugify(text: string): string {
           <h3>{{ item.text }}</h3>
           <ul>
             <li v-for="h of item.headers" :key="h.anchor">
-              <a :href="item.link + '.html#' + slugify(h.anchor)">{{ h.anchor }}</a>
+              <a :href="item.link + '.html#' + slugify(h.anchor)">{{
+                h.anchor
+              }}</a>
             </li>
           </ul>
         </div>
@@ -103,7 +105,7 @@ function slugify(text: string): string {
     </div>
 
     <div v-if="!filtered.length" class="no-match">
-      No API matching "{{ query }}" found.
+      "{{ query }}" ile eşleşen bir API bulunamadı.
     </div>
   </div>
 </template>

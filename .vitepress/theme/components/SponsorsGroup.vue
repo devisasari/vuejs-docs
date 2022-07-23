@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
-import { SponsorData, data, base, load } from './sponsors';
+import { SponsorData, data, base, load } from './sponsors'
 
 const { tier, placement = 'aside' } = defineProps<{
   tier: keyof SponsorData
@@ -57,7 +57,7 @@ onMounted(async () => {
       v-if="placement !== 'page' && tier !== 'special'"
       href="/sponsor/"
       class="sponsor-item action"
-      >Your logo</a
+      >Logonuz</a
     >
   </div>
 </template>

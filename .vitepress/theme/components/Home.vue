@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 import NewsLetter from './NewsLetter.vue'
-import { load, data, base } from './sponsors';
-import SponsorsGroup from './SponsorsGroup.vue';
-import VueMasteryModal from './VueMasteryModal.vue';
+import { load, data, base } from './sponsors'
+import SponsorsGroup from './SponsorsGroup.vue'
+import VueMasteryModal from './VueMasteryModal.vue'
 
 onMounted(async () => {
   await load()
@@ -13,18 +13,17 @@ onMounted(async () => {
 <template>
   <section id="hero">
     <h1 class="tagline">
-      The
-      <span class="accent">Progressive</span>
-      <br />JavaScript Framework
+      <span class="accent">İlerici</span>
+      <br />JavaScript Çerçevesi
     </h1>
     <p class="description">
-      An approachable, performant and versatile framework for building web
-      user interfaces.
+      Web kullanıcı arayüzleri oluşturmak için ulaşılabilir, performanslı
+      ve çok yönlü bir çerçeve.
     </p>
     <p class="actions">
       <vue-mastery-modal />
       <a class="get-started" href="/guide/introduction.html">
-        Get Started
+        Başlarken
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,17 +36,20 @@ onMounted(async () => {
           />
         </svg>
       </a>
-      <a class="setup" href="/guide/quick-start.html">Install</a>
+      <a class="setup" href="/guide/quick-start.html">İndir</a>
     </p>
   </section>
 
   <section id="special-sponsor">
-    <span>Special Sponsor</span>
+    <span>Özel Sponsorlar</span>
     <template v-if="data && data.special">
       <template v-for="{ url, img, name, description } of data.special">
         <a :href="url" target="_blank" rel="sponsored noopener">
           <picture v-if="img.endsWith('png')">
-            <source type="image/avif" :srcset="`${base}/images/${img.replace(/\.png$/, '.avif')}`" />
+            <source
+              type="image/avif"
+              :srcset="`${base}/images/${img.replace(/\.png$/, '.avif')}`"
+            />
             <img :src="`${base}/images/${img}`" :alt="name" />
           </picture>
           <img v-else :src="`${base}/images/${img}`" :alt="name" />
@@ -59,32 +61,32 @@ onMounted(async () => {
 
   <section id="highlights" class="vt-box-container">
     <div class="vt-box">
-      <h2>Approachable</h2>
+      <h2>Ulaşılabilir</h2>
       <p>
-        Builds on top of standard HTML, CSS and JavaScript with intuitive
-        API and world-class documentation.
+        Sezgisel API ve birinci sınıf dokümanlarla standart HTML, CSS ve
+        JavaScript'in üzerine kuruludur.
       </p>
     </div>
     <div class="vt-box">
-      <h2>Performant</h2>
+      <h2>Performanslı</h2>
       <p>
-        Truly reactive, compiler-optimized rendering system that rarely
-        requires manual optimization.
+        Nadiren manuel optimizasyon gerektiren, gerçekten reaktif,
+        derleyici için optimize edilmiş oluşturma sistemi.
       </p>
     </div>
     <div class="vt-box">
-      <h2>Versatile</h2>
+      <h2>Çok Yönlü</h2>
       <p>
-        A rich, incrementally adoptable ecosystem that scales between a
-        library and a full-featured framework.
+        Bir kitaplık ile tam özellikli bir çerçeve arasında ölçeklenen
+        zengin, aşamalı olarak uyarlanabilir bir ekosistem.
       </p>
     </div>
   </section>
 
   <section id="sponsors">
-    <h2>Platinum Sponsors</h2>
+    <h2>Platin Sponsorlar</h2>
     <SponsorsGroup tier="platinum" placement="landing" />
-    <h2>Gold Sponsors</h2>
+    <h2>Altın Sponsorlar</h2>
     <SponsorsGroup tier="gold" placement="landing" />
   </section>
 
