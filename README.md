@@ -10,3 +10,4 @@ The following pages are complete:
 - Site Metadata
 - Banners
 - introduction.md
+- guide/essentials/application.md
