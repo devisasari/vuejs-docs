@@ -1,6 +1,6 @@
-# Bir Vue uygulaması oluşturma
+# Bir Vue Uygulaması Oluşturma
 
-## Uygulama başlangıcı
+## Uygulama Başlangıcı
 
 Bir Vue uygulaması oluşturabilmek için gereken ilk adım, [`createApp`](/api/application#createapp) fonksiyonunu kullanarak bir uygulama nesnesi oluşturmaktır.
 
@@ -12,7 +12,7 @@ const app = createApp({
 })
 ```
 
-## Ana bileşen
+## Ana Bileşen
 
 Temelde, [`createApp`](/api/application#createapp) fonksiyonuna verilen obje bir "ana bileşen"dir. Her bir Vue uygulaması, mutlaka diğer bileşenleri sarmalayacak bir "ana bileşen"e ihtiyaç duyar. 
 
@@ -40,7 +40,7 @@ App (root component)
 
 Birden fazla bileşeni bir arada nasıl tanımlayıp kullanacağınızı sonraki bölümlerde göreceğiz. Bundan önce, şimdilik bir bileşenin içinde neler oluyor ona odaklanalım.
 
-## Uygulamayı elemana bağlamak
+## Uygulamayı Elemana Bağlamak
 Bir Vue uygulaması, herhangi bir DOM elamanına bağlanmadan (`.mount()` edilmeden önce) herhangi bir şey render etmez. Dolayısıyla uygulamamızı çalışır hale getirebilmek için gereken son adım, oluşturduğumuz uygulamayı bir DOM elemanına bağlamaktır. `mount` fonksiyonuna parametre olarak ister bir DOM elemanı, istersek de bir seçici verebiliriz.
 
 ```html
@@ -55,7 +55,7 @@ Oluşturduğumuz uygulamanın içeriği, verilen elamanın içerisine `render` o
 
 `.mount()` fonksiyonu, mutlaka tüm uygulama ayarlamaları ve assetler kaydolduktan sonra çağırılmalıdır. Ayrıca, diğer methodlardan farklı olarak; `mount` fonksiyonu uygulama nesnesi yerine ana bileşeni döndürür.
 
-### DOM içi ana bileşen yapısı
+### DOM İçi Ana Bileşen Yapısı
 
 Herhangi bir dönüştürücü adımı kullanmadan Vue'yü kullanırken, ana bileşeni doğrudan `mount` sarmalayıcısı içerisine koyabiliriz.
 ```html
@@ -80,7 +80,7 @@ app.mount('#app')
 
 Eğer ana bileşen kendi `template` ayarlasına sahip değilse; Vue otomatik olarak, sarmalayıcının `innerHTML` değerini, ana bileşen olarak algılar.
 
-## Uygulama ayarları
+## Uygulama Ayarları
 
 Uygulama ayarları, uygulama nesnesinin içerisinden ulaşılabilecek `.config` objesinden yapılabilir. Örnek olarak uygulama seviyesinde tüm hataları yakalayabilecek bir hata işleyicisi verilebilir:
 
@@ -103,7 +103,7 @@ This makes the `TodoDeleteButton` available for use anywhere in our app. We will
 
 Tüm ayarlamaları, uygulamayı `mount` etmeden önce yapmayı unutmayın!
 
-## Birden fazla uygulama oluşturmak
+## Birden Fazla Uygulama Oluşturmak
 Bir sayfa üzerinde yalnızca bir uygulama ile sınırlanmış değilsiniz. `createApp` API'yı, birden fazla uygulamanın tek bir sayfa üzerinde birbirinden tamamen bağımsız çalışmasını sağlayabilir. 
 
 ```js
